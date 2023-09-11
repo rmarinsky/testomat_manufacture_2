@@ -51,8 +51,6 @@ public class CreateTestSuiteRawTest {
         $(".list-group-wrapper .dragSortList").shouldHave(text(targetTestSuite));
     }
 
-    //carete
-
     private static void loginUser(String mail, String password) {
         $("#content-desktop #user_email").setValue(mail);
         $("#content-desktop #user_password").setValue(password);
