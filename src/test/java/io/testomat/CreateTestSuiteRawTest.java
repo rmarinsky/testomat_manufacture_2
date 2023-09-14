@@ -18,11 +18,6 @@ public class CreateTestSuiteRawTest {
 
     Faker faker = new Faker();
 
-
-    static {
-        //        Configuration.timeout
-    }
-
     @Test
     @DisplayName("Should be possible to create test suite for new project")
     void shouldBePossibleToCreateTestSuiteForNewProject() {
