@@ -1,6 +1,5 @@
 package io.testomat;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.github.javafaker.Faker;
@@ -17,11 +16,6 @@ import static com.codeborne.selenide.Selenide.$$;
 public class CreateTestSuiteRawTest {
 
     Faker faker = new Faker();
-
-
-    static {
-        //        Configuration.timeout
-    }
 
     @Test
     @DisplayName("Should be possible to create test suite for new project")
