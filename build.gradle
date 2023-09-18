@@ -15,9 +15,11 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation(
             'com.codeborne:selenide:6.18.0',
-            'com.github.javafaker:javafaker:1.0.2'
+            'com.github.javafaker:javafaker:1.0.2',
+            'com.microsoft.playwright:playwright:1.37.0',
     )
 
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.6'
 }
 
 test {

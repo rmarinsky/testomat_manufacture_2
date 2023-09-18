@@ -1,4 +1,4 @@
-package io.testomat;
+package io.testomat.selenide;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.$$;
 public class CreateTestSuiteRawTest {
 
     Faker faker = new Faker();
-
+    
     @Test
     @DisplayName("Should be possible to create test suite for new project")
     void shouldBePossibleToCreateTestSuiteForNewProject() {
