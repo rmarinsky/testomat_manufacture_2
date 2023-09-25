@@ -58,19 +58,21 @@ public class LoginPage extends BasePage {
     }
 
     @AllArgsConstructor
+    @Getter
     public enum CredsWithRoles {
 
         MANAGER("newromka@gmail.com", "p8qfCZ7Jv7pT!hh");
 
 
-        private final String mail;
-        private final String password;
+        public final String mail;
+        public final String password;
 
     }
 
     //just for example
     @AllArgsConstructor
     @Getter
+
     public enum CredsWithRolesAnother {
 
         MANAGER(new Creds("newromka@gmail.com", "p8qfCZ7Jv7pT!hh"));

@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation('org.junit.jupiter:junit-jupiter', 'org.testng:testng:7.7.0')
     implementation(
             'com.codeborne:selenide:6.18.0',
             'com.github.javafaker:javafaker:1.0.2',
@@ -25,4 +25,12 @@ dependencies {
 test {
     useJUnitPlatform()
 
+}
+
+task pwServeTraces(type: JavaExec, group: 'pw') {
+    mainClass = 'com.microsoft.playwright.CLI'
+    classpath = sourceSets.main.runtimeClasspath
+    args 'show-trace', 'build/pw/io.testomat.playwright.PWWrapperTests Should be possible to create test suite for new project.zip'
+    //add name of the test's trace file
+    systemProperties = System.getProperties()
 }

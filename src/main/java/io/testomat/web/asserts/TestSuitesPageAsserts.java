@@ -26,4 +26,12 @@ public class TestSuitesPageAsserts extends TestSuitesPage {
         return this;
     }
 
+    //implement via singletoin wrapper for playwright to store objects: Playuwright, Browser, BrowserContext, Page
+    // and store them in concurfenthashmap with thread id as key
+
+    //store all objects in the single concurrenthashmap
+
+    //add mehtod find("css Selector") and LocatorActions object where will be implkementation as decorator pattern
+    // method click, fill("value"), press("key"), shouldHave(Condition), shouldHas(Condition), shouldBe(Condition)
+
 }

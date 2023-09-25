@@ -72,7 +72,6 @@ public class PWRawTests {
         firstTestSuiteFiled.fill(targetTestSuiteName);
         firstTestSuiteFiled.press("Enter");
 
-
         assertThat(page.locator((".list-group-wrapper .dragSortItem a span"))).hasText(targetTestSuiteName);
     }
 

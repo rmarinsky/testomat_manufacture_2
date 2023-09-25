@@ -1,42 +1,36 @@
-package io.testomat.selenide;
+package io.testomat.playwright;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.junit5.TextReportExtension;
 import com.github.javafaker.Faker;
-import io.testomat.web.asserts.TestSuitesPageAsserts;
-import io.testomat.web.pages.LoginPage;
-import io.testomat.web.pages.ProjectsPage;
-import io.testomat.web.pages.TestSuitesPage;
+import io.testomat.common.PWContextExtension;
+import io.testomat.common.pw.Configuration;
+import io.testomat.common.pw.PlaywrightWrapper;
+import io.testomat.common.pw.conditions.Condition;
+import io.testomat.web.pages.pw.LoginPagePW;
+import io.testomat.web.pages.pw.ProjectsPagePW;
+import io.testomat.web.pages.pw.TestSuitesPagePW;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.$;
-
-
-@ExtendWith(TextReportExtension.class)
-public class CreateTestSuitePOTest {
+@ExtendWith(PWContextExtension.class)
+public class PWWrapperTests {
 
     Faker faker = new Faker();
 
-    private final LoginPage loginPage = new LoginPage();
+    private final LoginPagePW loginPage = new LoginPagePW();
 
     static {
         Configuration.baseUrl = "https://app.testomat.io";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1366x768";
-        Configuration.clickViaJs = true;
-        Configuration.fastSetValue = true;
+        Configuration.headless = false;
+        Configuration.saveTraces = true;
+        Configuration.poolingInterval = 100;
     }
 
     @Test
     @DisplayName("Should be possible to create test suite for new project")
     void shouldBePossibleToCreateTestSuiteForNewProject() {
-        Selenide.open("/users/sign_in");
+        PlaywrightWrapper.open("/users/sign_in");
         loginPage
                 .isLoaded()
                 .loginUser("newromka@gmail.com", "p8qfCZ7Jv7pT!hh"); //or loginUser(CredsWithRoles.MANAGER);
@@ -44,7 +38,7 @@ public class CreateTestSuitePOTest {
         preloaderIsHidden();
 
         var targetProjectTitle = faker.commerce().department();
-        new ProjectsPage()
+        new ProjectsPagePW()
                 .isLoaded()
                 .clickOnNewProjectButton()
                 .fillProjectTitle(targetProjectTitle)
@@ -54,7 +48,7 @@ public class CreateTestSuitePOTest {
 
         String targetTestSuite = faker.commerce().productName();
 
-        new TestSuitesPage()
+        new TestSuitesPagePW()
                 .isLoaded()
                 .closeReadmeModal()
                 .fillFirstTestSuite(targetTestSuite)
@@ -62,15 +56,10 @@ public class CreateTestSuitePOTest {
                 .asserts()
                 .listShouldHaveSize(1)
                 .firstTestSuiteInListShouldHaveText(targetTestSuite);
-
-        //just for example
-        new TestSuitesPageAsserts()
-                .listShouldHaveSize(1)
-                .firstTestSuiteInListShouldHaveText(targetTestSuite);
     }
 
     private void preloaderIsHidden() {
-        $("#app-loader").shouldBe(Condition.disappear, Duration.ofSeconds(30));
+        PlaywrightWrapper.$("#app-loader").shouldBe(Condition.disappear);
     }
 
 }
