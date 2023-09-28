@@ -1,4 +1,4 @@
-package io.testomat.common;
+package io.testomat.web.common;
 
 import io.testomat.common.pw.PlaywrightWrapper;
 import org.testng.*;

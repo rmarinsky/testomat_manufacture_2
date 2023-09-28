@@ -1,4 +1,4 @@
-package io.testomat.selenide;
+package io.testomat.web.selenide;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;

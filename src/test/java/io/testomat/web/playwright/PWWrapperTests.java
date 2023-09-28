@@ -1,10 +1,10 @@
-package io.testomat.playwright;
+package io.testomat.web.playwright;
 
 import com.github.javafaker.Faker;
-import io.testomat.common.PWContextExtension;
 import io.testomat.common.pw.Configuration;
 import io.testomat.common.pw.PlaywrightWrapper;
 import io.testomat.common.pw.conditions.Condition;
+import io.testomat.web.common.PWContextExtension;
 import io.testomat.web.pages.pw.LoginPagePW;
 import io.testomat.web.pages.pw.ProjectsPagePW;
 import io.testomat.web.pages.pw.TestSuitesPagePW;

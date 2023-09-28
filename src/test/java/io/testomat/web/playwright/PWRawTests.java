@@ -1,12 +1,10 @@
-package io.testomat.playwright;
+package io.testomat.web.playwright;
 
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.LocatorAssertions;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.*;
-
-import java.nio.file.Path;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
