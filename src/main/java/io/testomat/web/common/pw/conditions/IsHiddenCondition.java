@@ -1,9 +1,9 @@
-package io.testomat.common.pw.conditions;
+package io.testomat.web.common.pw.conditions;
 
 import com.microsoft.playwright.assertions.LocatorAssertions;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
-import io.testomat.common.pw.Configuration;
-import io.testomat.common.pw.LocatorActions;
+import io.testomat.web.common.pw.Configuration;
+import io.testomat.web.common.pw.LocatorActions;
 
 public class IsHiddenCondition implements Condition {
 

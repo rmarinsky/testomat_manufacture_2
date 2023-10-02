@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CreateProjectTest {
+public class CreateProjectRAWTest {
 
     @Test
     @DisplayName("Login user and create project")
@@ -21,6 +21,7 @@ public class CreateProjectTest {
                         "password", "p8qfCZ7Jv7pT!hh"
                 )
                 .post("/login")
+                .prettyPeek()
                 .jsonPath()
                 .getString("jwt");
 

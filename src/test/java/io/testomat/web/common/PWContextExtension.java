@@ -1,6 +1,6 @@
 package io.testomat.web.common;
 
-import io.testomat.common.pw.PlaywrightWrapper;
+import io.testomat.web.common.pw.PlaywrightWrapper;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;

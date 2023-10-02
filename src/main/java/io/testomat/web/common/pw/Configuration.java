@@ -1,4 +1,4 @@
-package io.testomat.common.pw;
+package io.testomat.web.common.pw;
 
 public class Configuration {
 

@@ -1,8 +1,7 @@
-package io.testomat.common.pw;
+package io.testomat.web.common.pw;
 
 import com.microsoft.playwright.*;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Paths;
 import java.util.concurrent.ConcurrentHashMap;

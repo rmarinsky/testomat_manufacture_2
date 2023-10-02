@@ -1,6 +1,6 @@
-package io.testomat.common.pw.conditions;
+package io.testomat.web.common.pw.conditions;
 
-import io.testomat.common.pw.LocatorActions;
+import io.testomat.web.common.pw.LocatorActions;
 
 public interface Condition {
     Condition visible = new VisibleCondition();

@@ -1,6 +1,6 @@
 package io.testomat.web.common;
 
-import io.testomat.common.pw.PlaywrightWrapper;
+import io.testomat.web.common.pw.PlaywrightWrapper;
 import org.testng.*;
 
 public class TracesListener implements ITestListener, IInvokedMethodListener {

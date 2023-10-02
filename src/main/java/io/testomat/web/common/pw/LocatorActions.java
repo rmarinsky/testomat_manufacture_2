@@ -1,7 +1,7 @@
-package io.testomat.common.pw;
+package io.testomat.web.common.pw;
 
 import com.microsoft.playwright.Locator;
-import io.testomat.common.pw.conditions.Condition;
+import io.testomat.web.common.pw.conditions.Condition;
 import lombok.Data;
 
 @Data

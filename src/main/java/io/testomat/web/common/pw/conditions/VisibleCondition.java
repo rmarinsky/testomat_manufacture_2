@@ -1,8 +1,8 @@
-package io.testomat.common.pw.conditions;
+package io.testomat.web.common.pw.conditions;
 
 import com.microsoft.playwright.assertions.LocatorAssertions;
-import io.testomat.common.pw.Configuration;
-import io.testomat.common.pw.LocatorActions;
+import io.testomat.web.common.pw.Configuration;
+import io.testomat.web.common.pw.LocatorActions;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 

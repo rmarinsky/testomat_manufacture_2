@@ -1,9 +1,9 @@
 package io.testomat.web.pages.pw;
 
 
-import io.testomat.common.pw.conditions.Condition;
+import io.testomat.web.common.pw.conditions.Condition;
 
-import static io.testomat.common.pw.PlaywrightWrapper.$;
+import static io.testomat.web.common.pw.PlaywrightWrapper.$;
 
 
 public class ProjectsPagePW extends BasePage{
