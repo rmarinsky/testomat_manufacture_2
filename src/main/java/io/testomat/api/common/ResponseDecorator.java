@@ -27,6 +27,7 @@ public class ResponseDecorator<T> {
                         targetResponse.body().asPrettyString()
                 )
         ).isEqualTo(statusCode);
+
         return this;
     }
 
