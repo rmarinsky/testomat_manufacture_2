@@ -29,6 +29,7 @@ public class LoginPagePW extends BasePage {
         return this;
     }
 
+
     public LoginPagePW fillPassword(String password) {
         f("#user_password").setValue(password);
         return this;
