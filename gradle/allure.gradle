@@ -1,0 +1,14 @@
+apply from: 'gradle/versions.gradle'
+
+allure {
+    version = allureVersion
+
+    adapter {
+        allureJavaVersion = allureVersion
+        frameworks {
+            junit5 {
+                enabled = true
+            }
+        }
+    }
+}

@@ -12,6 +12,7 @@ import io.testomat.web.pages.LoginPage;
 import io.testomat.web.pages.ProjectsPage;
 import io.testomat.web.pages.TestSuitesPage;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -21,6 +22,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 @ExtendWith(TextReportExtension.class)
+@Tag("web")
 public class CreateTestSuitePOTest {
 
     Faker faker = new Faker();

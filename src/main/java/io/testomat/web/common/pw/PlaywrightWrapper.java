@@ -1,6 +1,7 @@
 package io.testomat.web.common.pw;
 
 import com.microsoft.playwright.*;
+import io.qameta.allure.Step;
 import lombok.Data;
 
 import java.nio.file.Paths;
@@ -72,19 +73,23 @@ public class PlaywrightWrapper {
         targetContext.close();
     }
 
+    @Step("Open {url}")
     public static void open(String url) {
         pw().getPage().navigate(url);
     }
 
 
+    @Step("Find {selector}")
     public static LocatorActions $(String selector) {
         return find(selector);
     }
 
+    @Step("Find {selector}")
     public static LocatorActions find(String selector) {
         return new LocatorActions(pw().getPage().locator(selector).first());
     }
 
+    @Step("Find {selector} with text {text}")
     public static LocatorActions find(String selector, String text) {
         return new LocatorActions(pw().getPage().locator(selector).filter(
                 new Locator.FilterOptions().setHasText(text)

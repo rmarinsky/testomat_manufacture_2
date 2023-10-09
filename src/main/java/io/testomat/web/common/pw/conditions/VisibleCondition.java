@@ -15,4 +15,9 @@ public class VisibleCondition implements Condition {
         );
     }
 
+    @Override
+    public String toString() {
+        return "is visible";
+    }
+
 }

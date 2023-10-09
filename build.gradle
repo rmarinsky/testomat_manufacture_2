@@ -5,37 +5,9 @@ plugins {
 }
 
 apply from: 'gradle/dependencies.gradle'
+apply from: 'gradle/tests.gradle'
 
 group = 'io.testomat'
 version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
-allure {
-    version = allureVersion
-
-    adapter {
-        allureJavaVersion = allureVersion
-        frameworks {
-            junit5 {
-                enabled = true
-            }
-        }
-    }
-}
-
-test {
-    useJUnitPlatform()
-}
-
-task pwServeTraces(type: JavaExec, group: 'pw') {
-    mainClass = 'com.microsoft.playwright.CLI'
-    classpath = sourceSets.main.runtimeClasspath
-    args 'show-trace', 'build/pw/io.testomat.playwright.PWWrapperTests Should be possible to create test suite for new project.zip'
-    //add name of the test's trace file
-    systemProperties = System.getProperties()
-}
 
 

@@ -1,5 +1,6 @@
 package io.testomat.web.pages.pw;
 
+import io.qameta.allure.Step;
 import io.testomat.web.asserts.pw.TestSuitesPageAssertsPW;
 import io.testomat.web.common.pw.LocatorActions;
 import io.testomat.web.common.pw.conditions.Condition;
@@ -13,16 +14,19 @@ public class TestSuitesPagePW extends BasePage {
     protected String suitesListItem = ".list-group-wrapper .dragSortItem";
 
 
+    @Step
     public TestSuitesPagePW isLoaded() {
         firstTestSuite.shouldBe(Condition.visible);
         return this;
     }
 
+    @Step
     public TestSuitesPagePW closeReadmeModal() {
         $(".back").click();
         return this;
     }
 
+    @Step
     public TestSuitesPagePW fillFirstTestSuite(String targetTestSuite) {
         firstTestSuite.setValue(targetTestSuite).press("Enter");
         return this;

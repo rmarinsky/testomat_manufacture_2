@@ -1,10 +1,13 @@
-ext {
-    allureVersion = "2.17.2"
+apply from: 'gradle/versions.gradle'
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation('org.junit.jupiter:junit-jupiter', 'org.testng:testng:7.7.0',
+    testImplementation('org.junit.jupiter:junit-jupiter',
+            "org.testng:testng:7.4.0",
             "org.junit.jupiter:junit-jupiter-params:5.9.1")
     implementation(
             'com.codeborne:selenide:6.18.0',
@@ -15,7 +18,6 @@ dependencies {
             'org.assertj:assertj-core:3.24.2',
             "io.qameta.allure:allure-selenide:$allureVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "io.qameta.allure:allure-java-commons:$allureVersion",
             "io.qameta.allure:allure-junit5:$allureVersion"
     )
 

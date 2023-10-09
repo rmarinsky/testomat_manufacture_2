@@ -1,0 +1,32 @@
+task uiTests(type: Test) {
+    useJUnitPlatform() {
+        includeTags 'web'
+    }
+}
+task pwTests(type: Test) {
+    useJUnitPlatform() {
+        includeTags 'pwweb'
+    }
+}
+
+
+tasks.withType(Test) {
+    group = "Testomat tests"
+
+    reports {
+        junitXml.required = true
+        html.required = false
+    }
+
+    outputs.upToDateWhen { false }
+
+    systemProperties = ["allure.results.directory": System.getProperty('user.dir') + "/build/allure-results/"]
+}
+
+task pwServeTraces(type: JavaExec, group: 'pw') {
+    mainClass = 'com.microsoft.playwright.CLI'
+    classpath = sourceSets.main.runtimeClasspath
+    args 'show-trace', 'build/pw/io.testomat.playwright.PWWrapperTests Should be possible to create test suite for new project.zip'
+    //add name of the test's trace file
+    systemProperties = System.getProperties()
+}

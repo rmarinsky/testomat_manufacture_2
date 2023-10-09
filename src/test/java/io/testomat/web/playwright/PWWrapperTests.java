@@ -9,11 +9,13 @@ import io.testomat.web.pages.pw.LoginPagePW;
 import io.testomat.web.pages.pw.ProjectsPagePW;
 import io.testomat.web.pages.pw.TestSuitesPagePW;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 
 @ExtendWith(PWContextExtension.class)
+@Tag("pwweb")
 public class PWWrapperTests {
 
     Faker faker = new Faker();
