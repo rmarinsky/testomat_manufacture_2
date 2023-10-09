@@ -1,0 +1,23 @@
+ext {
+    allureVersion = "2.17.2"
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation('org.junit.jupiter:junit-jupiter', 'org.testng:testng:7.7.0',
+            "org.junit.jupiter:junit-jupiter-params:5.9.1")
+    implementation(
+            'com.codeborne:selenide:6.18.0',
+            'com.github.javafaker:javafaker:1.0.2',
+            'com.microsoft.playwright:playwright:1.37.0',
+            'com.fasterxml.jackson.core:jackson-databind:2.15.2',
+            'io.rest-assured:rest-assured:5.3.2',
+            'org.assertj:assertj-core:3.24.2',
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-rest-assured:$allureVersion",
+            "io.qameta.allure:allure-java-commons:$allureVersion",
+            "io.qameta.allure:allure-junit5:$allureVersion"
+    )
+
+    testRuntimeOnly 'org.slf4j:slf4j-simple:2.0.6'
+}

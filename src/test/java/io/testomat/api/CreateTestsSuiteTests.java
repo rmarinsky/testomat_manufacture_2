@@ -10,10 +10,15 @@ import io.testomat.api.dtos.ProjectsDTO;
 import io.testomat.api.dtos.SuiteDto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.List;
 
 public class CreateTestsSuiteTests {
 
-    Faker faker = new Faker();
+    static Faker faker = new Faker();
+
 
     @Test
     @DisplayName("Test name")
@@ -41,8 +46,19 @@ public class CreateTestsSuiteTests {
         suitesController.getAllSuitesForProject(projectTitle);
     }
 
+    @ParameterizedTest
+    @MethodSource("testNames")
+    @DisplayName("Olol name of test [{index}] {argumentsWithNames}")
+    void ololNameOfTest(SuiteDto targetSuiteDto) {
+        System.out.println("targetSuiteDto = " + targetSuiteDto);
+    }
 
-    private SuiteDto generateSuiteDto() {
+    private static List<SuiteDto> testNames() {
+        return List.of(generateSuiteDto(), generateSuiteDto(), generateSuiteDto());
+    }
+
+
+    private static SuiteDto generateSuiteDto() {
         return SuiteDto.builder()
                 .data(DataItem.builder()
                         .type("suites")

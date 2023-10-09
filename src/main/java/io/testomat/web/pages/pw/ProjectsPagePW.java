@@ -1,6 +1,7 @@
 package io.testomat.web.pages.pw;
 
 
+import com.codeborne.selenide.Selenide;
 import io.testomat.web.common.pw.conditions.Condition;
 
 import static io.testomat.web.common.pw.PlaywrightWrapper.$;
@@ -16,6 +17,12 @@ public class ProjectsPagePW extends BasePage{
     public ProjectsPagePW clickOnNewProjectButton() {
         f("[href='/projects/new']").click();
 
+        return this;
+    }
+
+    @io.qameta.allure.Step("create new project")
+    public ProjectsPagePW createNewProject() {
+        Selenide.$("");
         return this;
     }
 

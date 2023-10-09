@@ -4,7 +4,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.junit5.TextReportExtension;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
+import io.qameta.allure.selenide.AllureSelenide;
 import io.testomat.web.asserts.TestSuitesPageAsserts;
 import io.testomat.web.pages.LoginPage;
 import io.testomat.web.pages.ProjectsPage;
@@ -31,6 +33,7 @@ public class CreateTestSuitePOTest {
         Configuration.browserSize = "1366x768";
         Configuration.clickViaJs = true;
         Configuration.fastSetValue = true;
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @Test
