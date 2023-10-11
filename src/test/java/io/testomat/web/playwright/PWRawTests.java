@@ -3,7 +3,6 @@ package io.testomat.web.playwright;
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.LocatorAssertions;
-import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import org.junit.jupiter.api.*;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -24,7 +23,6 @@ public class PWRawTests {
     static void launchBrowser() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-                        .setChannel("chrome")
                 .setHeadless(false)
                 .setSlowMo(0)
         );
@@ -41,7 +39,7 @@ public class PWRawTests {
         page = context.newPage();
 
         page.navigate("https://uat.testomat.io/users/sign_in");
-        PlaywrightAssertions.assertThat(page.locator("#content-desktop #new_user")).isVisible(
+        assertThat(page.locator("#content-desktop #new_user")).isVisible(
                 new LocatorAssertions.IsVisibleOptions().setTimeout(20000));
 
         page.locator("#content-desktop #user_email").first().fill("newromka@gmail.com");
@@ -74,7 +72,7 @@ public class PWRawTests {
     }
 
     public void isHidden(Locator locator) {
-        PlaywrightAssertions.assertThat(locator).isHidden(new LocatorAssertions.IsHiddenOptions().setTimeout(10000));
+        assertThat(locator).isHidden(new LocatorAssertions.IsHiddenOptions().setTimeout(10000));
     }
 
 

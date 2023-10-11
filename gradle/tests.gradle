@@ -26,7 +26,7 @@ tasks.withType(Test) {
 task pwServeTraces(type: JavaExec, group: 'pw') {
     mainClass = 'com.microsoft.playwright.CLI'
     classpath = sourceSets.main.runtimeClasspath
-    args 'show-trace', 'build/pw/io.testomat.playwright.PWWrapperTests Should be possible to create test suite for new project.zip'
+    args 'show-trace', 'build/pw/io.testomat.web.playwright.PWWrapperTests Should be possible to create test suite for new project.zip'
     //add name of the test's trace file
     systemProperties = System.getProperties()
 }

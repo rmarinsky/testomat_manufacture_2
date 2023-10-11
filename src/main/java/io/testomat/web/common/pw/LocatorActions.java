@@ -11,6 +11,12 @@ public class LocatorActions {
     private final Locator locator;
 
     @Step("Fill {text}")
+    public LocatorActions $(String selector) {
+        locator.locator(selector);
+        return this;
+    }
+
+    @Step("Fill {text}")
     public LocatorActions fill(String text) {
         locator.fill(text);
         return this;
@@ -51,6 +57,4 @@ public class LocatorActions {
         return this;
     }
 
-    //hWQ1Ac17nRwVB96FLpMpDQ2n99m3bjdhJd0089c/QwmMIChTVSsiO9JqbO8hDt/tFsStEd1qak0hH3kPRKosaA==
-    //hWQ1Ac17nRwVB96FLpMpDQ2n99m3bjdhJd0089c/QwmMIChTVSsiO9JqbO8hDt/tFsStEd1qak0hH3kPRKosaA==
 }

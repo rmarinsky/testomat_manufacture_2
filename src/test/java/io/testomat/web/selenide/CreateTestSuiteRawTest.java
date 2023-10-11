@@ -20,8 +20,8 @@ public class CreateTestSuiteRawTest {
     @Test
     @DisplayName("Should be possible to create test suite for new project")
     void shouldBePossibleToCreateTestSuiteForNewProject() {
-        Selenide.open("https://app.testomat.io/users/sign_in");
-        loginUser("newromka@gmail.com", "p8qfCZ7Jv7pT!hh");
+        Selenide.open("https://uat.testomat.io/users/sign_in");
+        loginUser("newromka@gmail.com", "3y77b7HzrL2ebwQ!");
 
         preloaderIsHidden();
         $("#content-desktop h2").shouldBe(Condition.visible);

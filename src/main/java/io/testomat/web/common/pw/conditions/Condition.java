@@ -13,5 +13,4 @@ public interface Condition {
 
     void verify(LocatorActions locatorActions);
 
-
 }

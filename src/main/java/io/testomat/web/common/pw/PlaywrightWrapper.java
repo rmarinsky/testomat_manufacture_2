@@ -73,6 +73,10 @@ public class PlaywrightWrapper {
         targetContext.close();
     }
 
+    public static void pausePage() {
+        pw().getPage().pause();
+    }
+
     @Step("Open {url}")
     public static void open(String url) {
         pw().getPage().navigate(url);

@@ -1,13 +1,14 @@
 package io.testomat.web.pages.pw;
 
 
-import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Step;
 import io.testomat.web.common.pw.conditions.Condition;
 
 import static io.testomat.web.common.pw.PlaywrightWrapper.$;
+import static io.testomat.web.common.pw.PlaywrightWrapper.find;
 
 
-public class ProjectsPagePW extends BasePage{
+public class ProjectsPagePW extends BasePage {
 
     public ProjectsPagePW isLoaded() {
         f("h2").shouldHave(Condition.text("Projects"));
@@ -20,9 +21,9 @@ public class ProjectsPagePW extends BasePage{
         return this;
     }
 
-    @io.qameta.allure.Step("create new project")
-    public ProjectsPagePW createNewProject() {
-        Selenide.$("");
+    @Step("Ololo test")
+    public ProjectsPagePW ololoTest() {
+        find("#id", "ololo").click();
         return this;
     }
 
