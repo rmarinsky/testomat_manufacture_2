@@ -46,7 +46,7 @@ public class PWWrapperTests {
 
         preloaderIsHidden();
 
-        var targetProjectTitle = faker.commerce().department();
+        final var targetProjectTitle = faker.commerce().department();
         new ProjectsPagePW()
                 .isLoaded()
                 .clickOnNewProjectButton()

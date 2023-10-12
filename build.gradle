@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id "io.freefair.lombok" version "8.3"
     id("io.qameta.allure") version "2.11.2"
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0'
 }
 
 apply from: 'gradle/dependencies.gradle'
@@ -10,4 +11,6 @@ apply from: 'gradle/tests.gradle'
 group = 'io.testomat'
 version = '1.0-SNAPSHOT'
 
-
+kotlin {
+    jvmToolchain(11)
+}
