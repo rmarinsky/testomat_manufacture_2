@@ -118,4 +118,16 @@ public class PlaywrightWrapper {
 
     }
 
+    public static void saveStorageState(String filePath) {
+        BrowserContext context = pw().getContext();
+        context.storageState(new BrowserContext.StorageStateOptions().setPath(Paths.get(filePath)));
+    }
+
+    public static BrowserContext createNewContextWithStorageState(String filePath) {
+        Browser browser = pw().getBrowser();
+        BrowserContext context = browser.newContext(
+                new Browser.NewContextOptions().setStorageStatePath(Paths.get(filePath)));
+        return context;
+    }
+
 }
